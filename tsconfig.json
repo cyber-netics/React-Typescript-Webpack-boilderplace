@@ -12,6 +12,9 @@
     "module": "esnext",
     "strict": true,
     "jsx": "react",
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "baseUrl": "src"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

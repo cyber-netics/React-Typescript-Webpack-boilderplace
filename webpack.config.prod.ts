@@ -1,13 +1,14 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import * as path from "path";
 import * as webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import alias from "./configs/paths.config";
 
 class Settings {
-  static entry_file: string = "./src/index.tsx";
-  static html_template: string = "./public/index.html";
-  static output_dir: string = "build";
+  static entry_file = "./src/index.tsx";
+  static html_template = "./public/index.html";
+  static output_dir = "build";
   static extensions: string[] = [".ts", ".tsx", ".js", ".json"];
-  static bundlename: string = "[name].[contenthash].bundle.js";
+  static bundlename = "[name].[contenthash].bundle.js";
   static mode: "production" = "production";
   static stats: "errors-only" = "errors-only";
 }
@@ -27,6 +28,7 @@ const config: webpack.Configuration = {
 
   resolve: {
     extensions: Settings.extensions,
+    alias: alias,
   },
 
   plugins: [

@@ -1,18 +1,18 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-
 import * as path from "path";
 import * as webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import alias from "./configs/paths.config";
 
 class Settings {
-  static entry_file: string = "src/index.tsx";
-  static html_template: string = "public/index.html";
-  static ts_config: string = "tsconfig.json";
-  static output_dir: string = "build";
-  static bundlename: string = "[name].[contenthash].bundle.js";
+  static entry_file = "src/index.tsx";
+  static html_template = "public/index.html";
+  static ts_config = "tsconfig.json";
+  static output_dir = "build";
+  static bundlename = "[name].[contenthash].bundle.js";
 
   static mode: "development" = "development";
-  static devtool: string = "eval-cheap-source-map";
+  static devtool = "eval-cheap-source-map";
   static extensions: string[] = [".ts", ".tsx", ".js", ".json"];
   static stats: "errors-only" = "errors-only";
 }
@@ -26,9 +26,12 @@ const config: webpack.Configuration = {
     filename: Settings.bundlename,
     path: path.resolve(__dirname, Settings.output_dir),
   },
-
+  externals: {
+    react: "React",
+  },
   resolve: {
     extensions: Settings.extensions,
+    alias: alias,
   },
 
   entry: {
@@ -39,6 +42,9 @@ const config: webpack.Configuration = {
     new HtmlWebpackPlugin({
       inject: true,
       template: Settings.html_template,
+    }),
+    new webpack.ProvidePlugin({
+      React: "react",
     }),
     new ForkTsCheckerWebpackPlugin({
       typescript: {
