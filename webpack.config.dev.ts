@@ -26,9 +26,7 @@ const config: webpack.Configuration = {
     filename: Settings.bundlename,
     path: path.resolve(__dirname, Settings.output_dir),
   },
-  externals: {
-    react: "React",
-  },
+
   resolve: {
     extensions: Settings.extensions,
     alias: alias,
