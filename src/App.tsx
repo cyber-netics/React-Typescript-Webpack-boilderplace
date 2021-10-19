@@ -1,6 +1,8 @@
 import React from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import Layout from "Layout";
+
 import { createBrowserHistory } from "history";
+import { Router, Route, Switch } from "react-router-dom";
 
 import MainPage from "./Pages/main";
 
@@ -9,9 +11,11 @@ const App: React.FC = () => {
 
   return (
     <Router history={history}>
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+        </Switch>
+      </Layout>
     </Router>
   );
 };
