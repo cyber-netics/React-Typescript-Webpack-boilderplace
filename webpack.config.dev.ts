@@ -72,6 +72,23 @@ const config: webpack.Configuration = {
         use: ["html-loader"],
       },
       {
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader",
+          options: {
+            iesafe: true,
+          },
+        },
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
+      {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components|build)/,
         use: {
