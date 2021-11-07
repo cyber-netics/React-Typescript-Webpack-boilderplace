@@ -5,7 +5,11 @@
   "video": false,
   "component": {
     "testFiles": "cypress/integration/*.spec.js",
-    "viewportHeight": 500,
-    "viewportWidth": 700
+    "component": {
+      "componentFolder": "src",
+      "testFiles": "./__tests__/.*test.tsx",
+      "viewportHeight": 500,
+      "viewportWidth": 700
+    }
   }
 }

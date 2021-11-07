@@ -90,19 +90,6 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        exclude: [/node_modules/],
-        use: [
-          {
-            loader: "ts-loader",
-            options: {
-              configFile: "cypress/**/*",
-              transpileOnly: true,
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components|build)/,
         use: {
           loader: "babel-loader",

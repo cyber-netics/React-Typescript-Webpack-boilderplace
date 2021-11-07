@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://my-domain.com",
+  "experimentalStudio": true,
+  "env": {
+    "SKIP_PREFLIGHT_CHECK": true
+  }
+}

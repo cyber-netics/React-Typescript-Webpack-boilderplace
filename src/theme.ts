@@ -6,17 +6,11 @@ import { createGlobalStyle } from "styled-components";
  *
  */
 const highlight = "#d9d9d9";
-const highlightPrimary = "#40a9ff";
-const highlightPrimaryFade = "rgba(24, 144, 255, 0.2)";
-
-const innerDark = "#000000d9";
-
-/**
- *
- * General Colors
- */
 const dark = "#000000";
-const light = "#ffff";
+const primary = "#1890ff";
+const light = "#fff";
+const error = "#ff4d4f";
+const success = "rgb(82, 196, 26)";
 
 /**
  *
@@ -25,16 +19,12 @@ const light = "#ffff";
 const themeColors = {
   border: {
     highlight: highlight,
-    primary: highlightPrimary,
+    error,
   },
 
-  shadow: {
-    primary: highlightPrimaryFade,
-  },
+  shadow: {},
 
-  text: {
-    innerDark: innerDark,
-  },
+  text: {},
 };
 
 /**
@@ -42,8 +32,11 @@ const themeColors = {
  * Base
  */
 const baseColors = {
-  dark,
+  primary,
   light,
+  error,
+  success,
+  dark,
 };
 
 /**
@@ -52,12 +45,14 @@ const baseColors = {
  */
 export interface ThemeProps {
   baseColors: typeof baseColors;
-  themeColors: typeof themeColors;
+  border: typeof themeColors.border;
+  shadow: typeof themeColors.shadow;
+  text: typeof themeColors.text;
 }
 
 export const themeStyle: ThemeProps = Object.assign(
   {},
-  { baseColors, themeColors }
+  { baseColors, ...themeColors }
 );
 
 /**
@@ -67,6 +62,9 @@ export const themeStyle: ThemeProps = Object.assign(
 export const GlobalStyle = createGlobalStyle`
   html {
     height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
   }
 
   body {
