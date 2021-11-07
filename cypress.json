@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:8080",
+  "experimentalStudio": true,
+  "env": {},
+  "video": false,
+  "component": {
+    "testFiles": "cypress/integration/*.spec.js",
+    "viewportHeight": 500,
+    "viewportWidth": 700
+  }
+}
