@@ -89,6 +89,19 @@ const config: webpack.Configuration = {
         ],
       },
       {
+        test: /\.tsx?$/,
+        exclude: [/node_modules/],
+        use: [
+          {
+            loader: "ts-loader",
+            options: {
+              // skip typechecking for speed
+              transpileOnly: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components|build)/,
         use: {

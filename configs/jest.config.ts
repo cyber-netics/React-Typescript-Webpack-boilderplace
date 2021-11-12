@@ -1,4 +1,4 @@
-module.exports = {
+const jestConfig = {
   roots: ["../__tests__"],
   transform: {
     "^.+\\.tsx?$": "ts-jest",
@@ -17,3 +17,5 @@ module.exports = {
   },
   // Setup Enzyme
 };
+
+export default jestConfig;

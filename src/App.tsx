@@ -1,22 +1,15 @@
 import React from "react";
-import Layout from "Layout";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router-dom";
-
-import MainPage from "./Pages/main";
+import MainPage from "./Pages/Main";
 
 const App: React.FC = () => {
-  const history = createBrowserHistory();
-
   return (
-    <Router history={history}>
-      <Layout>
-        <Switch>
-          <Route exact path="/" component={MainPage} />
-        </Switch>
-      </Layout>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

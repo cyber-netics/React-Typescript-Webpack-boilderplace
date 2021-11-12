@@ -6,9 +6,20 @@ import { createGlobalStyle } from "styled-components";
  *
  */
 const highlight = "#d9d9d9";
+const highlight1 = "#40a9ff";
+const highlight2 = "rgba(24, 144, 255, 0.2)";
+
 const dark = "#000000";
+const dark1 = "#000000d9";
+// const dark2 = "#000000d4";
+const dark3 = "rgba(114, 114, 114, 0.9);";
+
 const primary = "#1890ff";
+// const primary1 = "#40a9ff";
+// const primary2 = "#e6f7ff";
+
 const light = "#fff";
+// const white = "#ffff";
 const error = "#ff4d4f";
 const success = "rgb(82, 196, 26)";
 
@@ -19,12 +30,17 @@ const success = "rgb(82, 196, 26)";
 const themeColors = {
   border: {
     highlight: highlight,
+    primary: highlight1,
     error,
   },
 
-  shadow: {},
+  shadow: {
+    primary: highlight2,
+  },
 
-  text: {},
+  text: {
+    innerDark: dark1,
+  },
 };
 
 /**
@@ -37,6 +53,7 @@ const baseColors = {
   error,
   success,
   dark,
+  dark3,
 };
 
 /**
