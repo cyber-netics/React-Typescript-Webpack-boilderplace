@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "Components/*": ["./src/Components/*"],
+      "theme": ["./src/theme"]
+    }
+  }
+}

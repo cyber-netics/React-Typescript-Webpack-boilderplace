@@ -9,5 +9,6 @@ describe("Test Run", () => {
 
     mount(<Button />);
     cy.get("button").click();
+    expect("1").to.be("1");
   });
 });

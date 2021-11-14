@@ -2,6 +2,7 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "cross-env TS_NODE_PROJECT=\"./configs/webpack.tsconfig.json\" webpack s --config ./webpack.config.dev.ts",
+    "build": "cross-env TS_NODE_PROJECT=\"./configs/webpack.tsconfig.json\" webpack --config ./webpack.config.prod.ts",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "cypress open-ct --config-file ./cypress.json",

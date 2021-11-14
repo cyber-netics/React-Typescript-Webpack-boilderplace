@@ -2,7 +2,6 @@ import * as path from "path";
 import * as webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import alias from "./configs/paths.config";
 
 class Settings {
   static entry_file = "src/index.tsx";
@@ -29,7 +28,9 @@ const config: webpack.Configuration = {
 
   resolve: {
     extensions: Settings.extensions,
-    alias: alias,
+    alias: {
+      Components: path.resolve(__dirname, "src/Components/"),
+    },
   },
 
   entry: {
