@@ -1,10 +1,12 @@
-const path = require("path");
+import path from "path";
+import alias from "./configs/paths.webpack";
 // const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.jsx"),
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx"],
+    alias: alias,
   },
   mode: "development",
   devtool: false,
