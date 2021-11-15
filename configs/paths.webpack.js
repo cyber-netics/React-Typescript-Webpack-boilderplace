@@ -1,5 +1,7 @@
 import path from "path";
 
-export const alias = {
-  Components: path.resolve(__dirname, "src/Components/"),
+const alias = {
+  Components: path.resolve("src/Components/"),
 };
+
+export default alias;
