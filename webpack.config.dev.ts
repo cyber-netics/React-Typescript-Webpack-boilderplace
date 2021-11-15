@@ -2,7 +2,7 @@ import * as path from "path";
 import * as webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import alias from "./configs/paths.webpack";
+import { alias } from "./configs/paths.webpack";
 
 class Settings {
   static entry_file = "src/index.tsx";

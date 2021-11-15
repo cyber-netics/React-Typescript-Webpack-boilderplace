@@ -1,5 +1,5 @@
 import path from "path";
-import alias from "./configs/paths.webpack";
+import { alias } from "./configs/paths.webpack";
 // const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
